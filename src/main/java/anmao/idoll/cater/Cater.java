@@ -1,5 +1,6 @@
 package anmao.idoll.cater;
 
+import anmao.idoll.cater.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.level.block.Blocks;
@@ -15,17 +16,16 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(CaterMod.MOD_ID)
-public class CaterMod
+@Mod(Cater.MOD_ID)
+public class Cater
 {
-    // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "catermod";
-    // Directly reference a slf4j logger
+    public static final String MOD_ID = "cater";
     private static final Logger LOGGER = LogUtils.getLogger();
-    public CaterMod()
+    //test s
+    public Cater()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+        ModItems.register(modEventBus);
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
