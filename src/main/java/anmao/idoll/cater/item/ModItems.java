@@ -12,7 +12,7 @@ public class ModItems {
     //
     public static final DeferredRegister<Item> Items = DeferredRegister.create(ForgeRegistries.ITEMS, Cater.MOD_ID);
 
-    public static final RegistryObject<Item> IGON_FLOWER = Items.register("igon_flower",() -> new Item(new Item.Properties().tab(ModCreativeModeTab.CATER_TAB)));
+    public static final RegistryObject<Item> INGOT_ZERO = Items.register("ingot_zero",() -> new Item(new Item.Properties().tab(ModCreativeModeTab.CATER_TAB)));
     public static void register(IEventBus eventBus){
         Items.register(eventBus);
     }

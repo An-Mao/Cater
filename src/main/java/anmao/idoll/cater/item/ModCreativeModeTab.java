@@ -7,7 +7,7 @@ public class ModCreativeModeTab {
     public static final CreativeModeTab CATER_TAB = new CreativeModeTab("cater") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(ModItems.IGON_FLOWER.get());
+            return new ItemStack(ModItems.INGOT_ZERO.get());
         }
     };
 }
