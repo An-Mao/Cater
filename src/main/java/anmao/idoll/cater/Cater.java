@@ -1,5 +1,6 @@
 package anmao.idoll.cater;
 
+import anmao.idoll.cater.block.ModBlocks;
 import anmao.idoll.cater.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -26,6 +27,7 @@ public class Cater
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
