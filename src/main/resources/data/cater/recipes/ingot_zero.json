@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cater:block_zero"
+    }
+  ],
+  "result": {
+    "item": "cater:ingot_zero",
+    "count": 9
+  }
+}
