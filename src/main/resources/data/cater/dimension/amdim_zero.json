@@ -1,0 +1,29 @@
+{
+  "type": "cater:amdim_zero",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "lakes": false,
+      "features": false,
+      "layers": [
+        {
+          "block": "minecraft:bedrock",
+          "height": 1
+        },
+        {
+          "block": "minecraft:magma_block",
+          "height": 2
+        },
+        {
+          "block": "minecraft:obsidian",
+          "height": 3
+        },
+        {
+          "block": "minecraft:smooth_stone",
+          "height": 4
+        }
+      ],
+      "structure_overrides": []
+    }
+  }
+}

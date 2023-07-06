@@ -4,5 +4,7 @@
   "block.cater.block_zero": "Zero Block",
   "block.cater.ore_zero": "Zero Ore",
 
-  "itemGroup.cater": "Cater"
+  "itemGroup.cater": "Cater",
+
+  "enchantment.cater.yuan": "yuan"
 }
