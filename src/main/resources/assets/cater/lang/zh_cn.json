@@ -1,8 +1,10 @@
 {
   "item.cater.ingot_zero": "零锭",
+  "item.cater.core_chaos": "混沌核心",
 
   "block.cater.block_zero": "零块",
   "block.cater.ore_zero": "零矿石",
+  "block.cater.deep_ore_zero": "深层零矿石",
 
   "itemGroup.cater": "猫先生",
 

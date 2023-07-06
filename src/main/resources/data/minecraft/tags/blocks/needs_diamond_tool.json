@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "cater:block_zero",
-    "cater:ore_zero"
+    "cater:ore_zero",
+    "cater:deep_ore_zero"
   ]
 }

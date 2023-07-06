@@ -23,6 +23,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> BLOCK_ZERO = registerBlock("block_zero",()->new Block(BlockBehaviour.Properties.of(Material.STONE).strength(10f).requiresCorrectToolForDrops()), ModCreativeModeTab.CATER_TAB);
     public static final RegistryObject<Block> ORE_ZERO = registerBlock("ore_zero",()->new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).strength(10f).requiresCorrectToolForDrops(),UniformInt.of(3,7)),ModCreativeModeTab.CATER_TAB);
+    public static final RegistryObject<Block> DEEP_ORE_ZERO = registerBlock("deep_ore_zero",()->new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).strength(10f).requiresCorrectToolForDrops(),UniformInt.of(3,7)),ModCreativeModeTab.CATER_TAB);
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab){
         RegistryObject<T> toReturn = BLOCKS.register(name,block);
         registerBlockItem(name,toReturn,tab);

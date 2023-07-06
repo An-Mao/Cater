@@ -4,6 +4,8 @@ import anmao.idoll.cater.block.ModBlocks;
 import anmao.idoll.cater.enchantment.ModEnchantments;
 import anmao.idoll.cater.item.ModItems;
 import anmao.idoll.cater.world.dimension.ModDimensions;
+import anmao.idoll.cater.world.feature.ModConfiguredFeatures;
+import anmao.idoll.cater.world.feature.ModPlacedFeatures;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.level.block.Blocks;
@@ -30,7 +32,10 @@ public class Cater
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
         ModEnchantments.register(modEventBus);
+        ModConfiguredFeatures.register(modEventBus);
+        ModPlacedFeatures.register(modEventBus);
         ModDimensions.register();
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
