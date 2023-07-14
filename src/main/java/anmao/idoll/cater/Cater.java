@@ -5,12 +5,12 @@ import anmao.idoll.cater.enchantment.ModEnchantments;
 import anmao.idoll.cater.entity.ModEntityTypes;
 import anmao.idoll.cater.entity.client.RendererEQ;
 import anmao.idoll.cater.item.ModItems;
+import anmao.idoll.cater.networking.ModMessages;
 import anmao.idoll.cater.world.dimension.ModDimensions;
 import anmao.idoll.cater.world.feature.ModConfiguredFeatures;
 import anmao.idoll.cater.world.feature.ModPlacedFeatures;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -57,6 +57,7 @@ public class Cater
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
+        ModMessages.register();
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent

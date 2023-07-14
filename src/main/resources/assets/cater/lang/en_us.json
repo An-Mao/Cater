@@ -9,5 +9,10 @@
 
   "itemGroup.cater": "Cater",
 
-  "enchantment.cater.yuan": "yuan"
+  "enchantment.cater.yuan": "yuan",
+
+  "massage.cater.add_san":"add san",
+
+  "key.category.cater.idoll": "CATER",
+  "key.cater.add_san": "ADD SAN"
 }
