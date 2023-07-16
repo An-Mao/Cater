@@ -3,9 +3,9 @@ package anmao.idoll.cater.San;
 import net.minecraft.nbt.CompoundTag;
 
 public class PlayerSan {
-    private int san;
     private final int SAN_MIN = 0;
     private final int SAN_MAX = 100;
+    private int san = SAN_MAX;
 
     public int getSan() {
         return san;

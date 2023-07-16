@@ -13,7 +13,6 @@ public class ItemCoreChaos extends Item {
     public ItemCoreChaos(Properties p_41383_) {
         super(p_41383_);
     }
-
     @Override
     public InteractionResultHolder<ItemStack> use(Level p_41432_, Player p_41433_, InteractionHand p_41434_) {
         if (!p_41432_.isClientSide() && p_41434_ == InteractionHand.MAIN_HAND){
