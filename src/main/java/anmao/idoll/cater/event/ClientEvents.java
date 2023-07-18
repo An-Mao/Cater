@@ -3,6 +3,7 @@ package anmao.idoll.cater.event;
 import anmao.idoll.cater.Cater;
 import anmao.idoll.cater.client.SanHudOverlay;
 import anmao.idoll.cater.entity.ModEntityTypes;
+import anmao.idoll.cater.entity.client.RendererD;
 import anmao.idoll.cater.entity.client.RendererEQ;
 import anmao.idoll.cater.networking.ModMessages;
 import anmao.idoll.cater.networking.packet.SanC2SPacket;
@@ -40,6 +41,7 @@ public class ClientEvents {
             //LOGGER.info("HELLO FROM CLIENT SETUP");
             //LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
             EntityRenderers.register(ModEntityTypes.EQ.get(), RendererEQ::new);
+            EntityRenderers.register(ModEntityTypes.D.get(), RendererD::new);
         }
         @SubscribeEvent
         public static void onKeyRegister(RegisterKeyMappingsEvent event){

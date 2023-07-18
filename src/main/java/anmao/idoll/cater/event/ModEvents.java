@@ -5,6 +5,7 @@ import anmao.idoll.cater.Cater;
 import anmao.idoll.cater.San.PlayerSan;
 import anmao.idoll.cater.San.PlayerSanProvider;
 import anmao.idoll.cater.entity.ModEntityTypes;
+import anmao.idoll.cater.entity.custom.EntityD;
 import anmao.idoll.cater.entity.custom.EntityEQ;
 import anmao.idoll.cater.networking.ModMessages;
 import anmao.idoll.cater.networking.packet.SanDataSyncS2CPacket;
@@ -97,16 +98,16 @@ public class ModEvents {
         public static void onPlayerTick(TickEvent.PlayerTickEvent event)
         {
             if (event.side == LogicalSide.SERVER) {
-                event.player.getCapability(PlayerSanProvider.PLAYER_SAN).ifPresent(playerSan -> {
-                    if (SanDeath(event.player, playerSan.getSan()) && event.player.getRandom().nextFloat() < 0.005f) {
-                        if (event.player.getLevel().dimension() == Level.NETHER) {
-                            playerSan.subSan(1);
+                if (event.player instanceof ServerPlayer serverPlayer) {
+                    serverPlayer.getCapability(PlayerSanProvider.PLAYER_SAN).ifPresent(playerSan -> {
+                        if (SanDeath(serverPlayer, playerSan.getSan()) && serverPlayer.getRandom().nextFloat() < 0.005f) {
+                            if (serverPlayer.getLevel().dimension() == Level.NETHER) {
+                                playerSan.subSan(1);
+                            }
+                            ModMessages.sendToPlayer(new SanDataSyncS2CPacket(playerSan.getSan()), serverPlayer);
                         }
-                        //event.player.sendSystemMessage(Component.literal("SAN Down"));
-                        ModMessages.sendToPlayer(new SanDataSyncS2CPacket(playerSan.getSan()), (ServerPlayer) event.player);
-                    }
-                });
-
+                    });
+                }
             }
         }
         @SubscribeEvent
@@ -164,31 +165,6 @@ public class ModEvents {
                                 playerSan.subSan(sanTags.getNumbers());
                             }
                         }
-                        /*
-                        // food
-                        //Item _item = event.getItem().getItem();
-                        if (_item == Items.BEEF || _item == Items.PORKCHOP || _item == Items.COD || _item == Items.SALMON || _item == Items.RABBIT || _item == Items.MUTTON) {
-                            playerSan.subSan(1);
-                        }
-                        if (_item == Items.PUFFERFISH || _item == Items.ROTTEN_FLESH || _item == Items.SPIDER_EYE || _item == Items.POISONOUS_POTATO)
-                        {
-                            playerSan.subSan(3);
-                        }
-                        if (_item == Items.COOKED_BEEF || _item == Items.APPLE || _item == Items.BREAD || _item == Items.COOKED_PORKCHOP || _item == Items.COOKED_COD || _item == Items.COOKED_SALMON || _item == Items.COOKIE || _item == Items.MELON_SLICE || _item == Items.COOKED_CHICKEN || _item == Items.CARROT || _item == Items.POTATO || _item == Items.BAKED_POTATO || _item == Items.PUMPKIN_PIE || _item == Items.COOKED_RABBIT || _item == Items.RABBIT_STEW || _item == Items.COOKED_MUTTON || _item == Items.BEETROOT || _item == Items.BEETROOT_SOUP || _item == Items.SWEET_BERRIES || _item == Items.GLOW_BERRIES ) {
-                            playerSan.addSan(1);
-                        }
-                        if (_item == Items.GOLDEN_APPLE){
-                            playerSan.addSan(3);
-                        }
-                        if (_item == Items.ENCHANTED_GOLDEN_APPLE){
-                            playerSan.addSan(5);
-                        }
-                        //potion
-                        if (_item == Items.POTION){
-                            playerSan.subSan(1);
-                        }
-
-                         */
                         ModMessages.sendToPlayer(new SanDataSyncS2CPacket(playerSan.getSan()), player);
                     }
                 });
@@ -200,6 +176,7 @@ public class ModEvents {
         @SubscribeEvent
         public static void entityAttributeEvent(EntityAttributeCreationEvent event){
             event.put(ModEntityTypes.EQ.get(), EntityEQ.setAttributes());
+            event.put(ModEntityTypes.D.get(), EntityD.setAttributes());
         }
 
     }

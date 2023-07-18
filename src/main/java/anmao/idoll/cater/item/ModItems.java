@@ -20,6 +20,8 @@ public class ModItems
             () -> new ItemCoreChaos(new Item.Properties().tab(ModCreativeModeTab.CATER_TAB)));
     public static final RegistryObject<Item> SPAWN_EGG_EQ = Items.register("spawn_egg_eq",
             () -> new ForgeSpawnEggItem(ModEntityTypes.EQ,0x000000,0xffffff,new Item.Properties().tab(ModCreativeModeTab.CATER_TAB)));
+    public static final RegistryObject<Item> SPAWN_EGG_D = Items.register("spawn_egg_d",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.D,0x000000,0x111111,new Item.Properties().tab(ModCreativeModeTab.CATER_TAB)));
 
     public static final RegistryObject<Item> _ITEM_RABBIT_POCKET_WATCH = Items.register("rabbit_pocket_watch",()->new Item(new Item.Properties().tab(ModCreativeModeTab.CATER_TAB)));
 
